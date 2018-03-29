@@ -146,9 +146,9 @@
         "Sql.Database.Forms": "[concat(parameter('SqlServer'), concat(parameter('SqlDbPrefix'), '-experienceforms'))]",
         // MongoDB
         "Mongo.Analytics": "mongodb://localhost/Sitecore_analytics",
-        "Mongo.Tracking.Live": "connectionString='mongodb://localhost/Sitecore_tracking_live'",
-        "Mongo.Tracking.History": "connectionString='mongodb://localhost/Sitecore_tracking_history'",
-        "Mongo.Tracking.Contact": "connectionString='mongodb://localhost/Sitecore_tracking_contact'",
+        "Mongo.Tracking.Live": "mongodb://localhost/Sitecore_tracking_live",
+        "Mongo.Tracking.History": "mongodb://localhost/Sitecore_tracking_history",
+        "Mongo.Tracking.Contact": "mongodb://localhost/Sitecore_tracking_contact",
         // Solr core names.
         "Solr.Core.Name": "[concat(parameter('SolrCorePrefix'), '_core_index')]",
         "Solr.Master.Name": "[concat(parameter('SolrCorePrefix'), '_master_index')]",
@@ -420,11 +420,11 @@
                         },
                         {
                             "Name": "Core Admin Connection String",
-                            "Value": "Data Source=.\\SQLEXPRESS; Database=wsf-oap-core; User ID=sa; password=sa"
+                            "Value": "[variable('Sql.Database.Core')]"
                         },
                         {
                             "Name": "Master Admin Connection String",
-                            "Value": "Data Source=.\\SQLEXPRESS; Database=wsf-oap-master; User ID=sa; password=sa"
+                            "Value": "[variable('Sql.Database.Master')]"
                         }
                     ],
                     "EnableRule": "DoNotDelete",
@@ -448,11 +448,11 @@
                         },
                         {
                             "Name": "Core Admin Connection String",
-                            "Value": "Data Source=.\\SQLEXPRESS; Database=wsf-oap-core; User ID=sa; password=sa"
+                            "Value": "[variable('Sql.Database.Core')]"
                         },
                         {
                             "Name": "Master Admin Connection String",
-                            "Value": "Data Source=.\\SQLEXPRESS; Database=wsf-oap-master; User ID=sa; password=sa"
+                            "Value": "[variable('Sql.Database.Master')]"
                         }
                     ],
                     "EnableRule": "DoNotDelete",

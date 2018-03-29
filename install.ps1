@@ -5,14 +5,14 @@
 # Add the Sitecore MyGet repository to PowerShell
 Register-PSRepository -Name SitecoreGallery -SourceLocation https://sitecore.myget.org/F/sc-powershell/api/v2 
 
-# Install the Sitecore Install Framwork module
+# # Install the Sitecore Install Framwork module
 Install-Module SitecoreInstallFramework
 
-# Install the Sitecore Fundamentals module (provides additional functionality for local installations like creating self-signed certificates)
+# # Install the Sitecore Fundamentals module (provides additional functionality for local installations like creating self-signed certificates)
 Install-Module SitecoreFundamentals
 
     
-# Import the modules into your current PowerShell context (if necessary)
+# # Import the modules into your current PowerShell context (if necessary)
 Import-Module SitecoreFundamentals
 Import-Module SitecoreInstallFramework
 
@@ -20,6 +20,7 @@ Import-Module SitecoreInstallFramework
 $version = "8.2 rev. 171121"
 $PSScriptRootsitecore = (Get-Item -Path ".\" -Verbose).FullName
 $files = Join-Path -path $PSScriptRootsitecore -childpath "Files\$version\"
+$modules = Join-Path -path $PSScriptRootsitecore -childpath "Files\Modules\"
 $buildTarget = "Build"
 
 $prefix = "wsf-master-oap"
@@ -50,8 +51,8 @@ $sitecoreParams =
 @{     
     Path = "$($PSScriptRootsitecore)\\config\xp-sitecore-cm-82-171121-ps472-sxa16.json"
     Package = "$($files)Sitecore 8.2 rev. 171121_single.scwdp.zip" 
-    Package_Powershell = "$($files)Sitecore PowerShell Extensions-4.7.2 for Sitecore 8.scwdp.zip" 
-    Package_SXA = "$($files)Sitecore PowerShell Extensions-4.7.2 for Sitecore 8.scwdp.zip" 
+    Package_Powershell = "$($modules)Sitecore PowerShell Extensions-4.7.2 for Sitecore 8.scwdp.zip" 
+    Package_SXA = "$($modules)Sitecore Experience Accelerator 1.6 rev. 180103 for 8.2.scwdp.zip" 
     InstallDirectory = $buildTarget 
     LicenseFile = "$($files)license.xml"
     SqlDbPrefix = $sitecoreSiteName  
