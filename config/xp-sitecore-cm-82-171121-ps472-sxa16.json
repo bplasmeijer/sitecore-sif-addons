@@ -241,13 +241,15 @@
                 "Add": [
                     {
                         "HostHeader": "[parameter('SiteName')]",
-                        "Protocol": "http",
-                        "SSLFlags": 1,
-                        "Thumbprint": "[variable('Security.SSL.CertificateThumbprint')]"
+                        "Protocol": "http"
+//                        ,
+//                        "SSLFlags": 1,
+//                        "Thumbprint": "[variable('Security.SSL.CertificateThumbprint')]"
                     }
                 ]
-            },
-            "Skip": "[not(parameter('SSLCert'))]"
+            }
+            // ,
+            // "Skip": "[not(parameter('SSLCert'))]"
         },
         "CreateHostHeader": {
             // Sets a hostheader for the website.
@@ -362,7 +364,7 @@
                         },
                         {
                             "Name": "Tracking Live Connection String",
-                            "Value": "[variable('Mongo.Tracking.Live')"
+                            "Value": "[variable('Mongo.Tracking.Live')]"
                         },
                         {
                             "Name": "Tracking History Connection String",

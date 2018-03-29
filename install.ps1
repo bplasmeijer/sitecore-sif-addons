@@ -30,7 +30,7 @@ $SolrUrl = "https://localhost:8983/solr"
 $SolrRoot = "C:solr-6.6.2"
 $SolrService = "solr662"
 
-$SqlServer = "Data Source=.\\SQLEXPRESS;User ID=sa;password=sa;Database="
+$SqlServer = "Data Source=.\SQLEXPRESS;User ID=sa;password=sa;Database="
 
 #install solr cores for xdb 
 $solrParams = 
